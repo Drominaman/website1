@@ -34,6 +34,14 @@ body {
     overflow: hidden;
 }
 
+/* Color ticks green and crosses red */
+.table-summary tbody td:not(.no):not(:first-child) {
+  color: #28a745; /* green for ticks */
+}
+.table-summary tbody td.no {
+  color: #dc3545; /* red for crosses */
+}
+
 .table-summary th,
 .table-summary td {
     padding: 4px;        /* smaller padding */
@@ -115,12 +123,4 @@ hr {
   .table-summary td {
     min-width: 120px;
   }
-}
-
-/* Color ticks and crosses */
-.table-summary td {
-  color: #28a745; /* green for ticks */
-}
-.table-summary td.no {
-  color: #dc3545; /* red for crosses */
 }
