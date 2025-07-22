@@ -25,9 +25,10 @@ body {
 }
 
 .table-summary {
+    font-size: 10px;
+    max-width: 700px;   /* constrain overall width */
+    margin: 0 auto 20px;
     width: 100%;
-    max-width: 100%;              /* allow full-width within post-content */
-    margin: 0 auto 20px;          /* center table and add bottom spacing */
     border-collapse: collapse;
     border-radius: 6px;
     overflow: hidden;
@@ -35,15 +36,14 @@ body {
 
 .table-summary th,
 .table-summary td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 4px;        /* smaller padding */
     vertical-align: middle;
     text-align: center;
 }
 /* ===== Logo Styling ===== */
 .company-logo {
-  width: 30px;           /* smaller size */
-  height: 30px;          /* enforce square */
+  width: 24px;
+  height: 24px;
   object-fit: contain;   /* maintain aspect */
   border-radius: 50%;    /* make it circular */
   margin: 0 auto;        /* center inside flex column */
@@ -69,7 +69,7 @@ body {
 /* ===== Table tweaks ===== */
 .table-summary th,
 .table-summary td {
-  padding: 8px;          /* slightly tighter */
+  padding: 4px;          /* slightly tighter */
   vertical-align: middle;
 }
 
@@ -101,4 +101,18 @@ hr {
   height: 1px;                 /* Thin line */
   background-color: #ccc;      /* Light gray color */
   margin: 20px 0;              /* Vertical spacing */
+}
+
+/* Responsive table scrolling on mobile */
+@media (max-width: 768px) {
+  .table-summary {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-summary th,
+  .table-summary td {
+    min-width: 120px;
+  }
 }
