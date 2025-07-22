@@ -116,3 +116,11 @@ hr {
     min-width: 120px;
   }
 }
+
+/* Color ticks and crosses */
+.table-summary td {
+  color: #28a745; /* green for ticks */
+}
+.table-summary td.no {
+  color: #dc3545; /* red for crosses */
+}
