@@ -34,12 +34,13 @@ body {
     overflow: hidden;
 }
 
-/* Color ticks green and crosses red */
-.table-summary tbody td:not(.no):not(:first-child) {
-  color: #28a745; /* green for ticks */
+/* Color ticks green */
+.table-summary td {
+  color: #28a745;
 }
-.table-summary tbody td.no {
-  color: #dc3545; /* red for crosses */
+/* Override crosses (cells with class .no) to red */
+.table-summary td.no {
+  color: #dc3545 !important;
 }
 
 .table-summary th,
