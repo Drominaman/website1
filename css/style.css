@@ -26,7 +26,7 @@ body {
 
 .table-summary {
     font-size: 9px;
-    max-width: 600px;   /* constrain overall width */
+    max-width: 800px;   /* constrain overall width */
     margin: 0 auto 20px;
     width: 100%;
     border-collapse: collapse;
@@ -35,14 +35,6 @@ body {
 }
 
 
-
-/* Color all non-'no' cells (ticks) green */
-.table-summary td:not(.no) {
-  color: #28a745;
-}
-.table-summary td.no {
-  color: #dc3545;
-}
 
 .table-summary th,
 .table-summary td {
