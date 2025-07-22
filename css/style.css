@@ -1,0 +1,104 @@
+body {
+    background-color: #FFF;
+    font-family: 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    text-align: center;           /* ensure inline elements center where needed */
+}
+
+.site-header,
+.post-content,
+.footer {
+    max-width: 750px;             /* same max width as content */
+    margin: 0 auto;               /* center horizontally */
+    text-align: left;             /* reset text to left-align inside */
+}
+
+.site-header {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.post-content {
+    padding: 0 20px;
+}
+
+.table-summary {
+    width: 100%;
+    max-width: 100%;              /* allow full-width within post-content */
+    margin: 0 auto 20px;          /* center table and add bottom spacing */
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.table-summary th,
+.table-summary td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: middle;
+    text-align: center;
+}
+/* ===== Logo Styling ===== */
+.company-logo {
+  width: 30px;           /* smaller size */
+  height: 30px;          /* enforce square */
+  object-fit: contain;   /* maintain aspect */
+  border-radius: 50%;    /* make it circular */
+  margin: 0 auto;        /* center inside flex column */
+}
+
+/* Center the logo+name column */
+.company-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Vendor section dashboard images */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 6px;
+}
+
+/* ===== Table tweaks ===== */
+.table-summary th,
+.table-summary td {
+  padding: 8px;          /* slightly tighter */
+  vertical-align: middle;
+}
+
+/* Increase contrast of category rows */
+.table-summary .category td {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Rounded corners on the table */
+.table-summary {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Optional: hover highlight */
+.table-summary tbody tr:hover {
+  background-color: #fafafa;
+}
+.footer {
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Thinner divider rule */
+hr {
+  border: none;                /* Remove default border */
+  height: 1px;                 /* Thin line */
+  background-color: #ccc;      /* Light gray color */
+  margin: 20px 0;              /* Vertical spacing */
+}
