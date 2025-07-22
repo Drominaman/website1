@@ -25,8 +25,8 @@ body {
 }
 
 .table-summary {
-    font-size: 10px;
-    max-width: 700px;   /* constrain overall width */
+    font-size: 9px;
+    max-width: 600px;   /* constrain overall width */
     margin: 0 auto 20px;
     width: 100%;
     border-collapse: collapse;
@@ -34,17 +34,19 @@ body {
     overflow: hidden;
 }
 
-/* Color ticks green and crosses red */
-.table-summary tbody td:not(.no):not(:first-child) {
-  color: #28a745; /* green for ticks */
+
+
+/* Color all non-'no' cells (ticks) green */
+.table-summary td:not(.no) {
+  color: #28a745;
 }
-.table-summary tbody td.no {
-  color: #dc3545; /* red for crosses */
+.table-summary td.no {
+  color: #dc3545;
 }
 
 .table-summary th,
 .table-summary td {
-    padding: 4px;        /* smaller padding */
+    padding: 2px;        /* smaller padding */
     vertical-align: middle;
     text-align: center;
 }
@@ -77,7 +79,7 @@ body {
 /* ===== Table tweaks ===== */
 .table-summary th,
 .table-summary td {
-  padding: 4px;          /* slightly tighter */
+  padding: 2px;          /* slightly tighter */
   vertical-align: middle;
 }
 
