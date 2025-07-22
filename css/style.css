@@ -25,8 +25,8 @@ body {
 }
 
 .table-summary {
-    font-size: 9px;
-    max-width: 800px;   /* constrain overall width */
+    font-size: 11px;
+    max-width: 900px;   /* constrain overall width */
     margin: 0 auto 20px;
     width: 100%;
     border-collapse: collapse;
@@ -38,7 +38,8 @@ body {
 
 .table-summary th,
 .table-summary td {
-    padding: 2px;        /* smaller padding */
+    border: 1px solid #ddd; /* add dividers */
+    padding: 4px;
     vertical-align: middle;
     text-align: center;
 }
@@ -71,7 +72,7 @@ body {
 /* ===== Table tweaks ===== */
 .table-summary th,
 .table-summary td {
-  padding: 2px;          /* slightly tighter */
+  padding: 4px;          /* slightly tighter */
   vertical-align: middle;
 }
 
