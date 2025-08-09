@@ -50,7 +50,7 @@ new Vue({
           "They support both manual and automated options depending on tier."
         ]
       },
-            {
+      {
         name: "Aura",
         url: "https://www.aura.com/",
         rating: "⭐⭐⭐",
@@ -76,4 +76,4 @@ new Vue({
       }
     ]
   }
-}); 
+});
