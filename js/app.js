@@ -1,79 +1,67 @@
-new Vue({
-  el: '#app',
-  data: {
-    products: [
-      {
-        name: "Incogni",
-        url: "https://incogni.com/",
-        rating: "⭐⭐⭐⭐",
-        recurring: true,
-        price: "$8.29 /mo (billed annually)",
-        summary: "Automated opt-outs at scale. Clean UX, trusted (backed by Surfshark).",
-        quotes: [
-          "I used Incogni… it removed me from everywhere.",
-          "Backed by Surfshark, so they’re likely in it for the long haul."
-        ]
-      },
-      {
-        name: "Kanary",
-        url: "https://www.kanary.com/",
-        rating: "⭐⭐⭐⭐",
-        recurring: true,
-        price: "$14.99 /mo",
-        summary: "Deep broker coverage with high-accuracy detection. Offers manual controls.",
-        quotes: [
-          "They cover the largest list of brokers & offer the highest number of accurate exposures.",
-          "Free trial was a plus for testing it out."
-        ]
-      },
-      {
-        name: "DeleteMe",
-        url: "https://joindeleteme.com/",
-        rating: "⭐⭐⭐⭐⭐",
-        recurring: true,
-        price: "$8.71 /mo",
-        summary: "The original big name. Easy setup, though some users report missed listings or slow updates.",
-        quotes: [
-          "I’ve used DeleteMe for 2+ years… aside from voter records, nothing is out there anymore.",
-          "Seems to miss a few data broker sites and takes a while to report."
-        ]
-      },
-      {
-        name: "Optery",
-        url: "https://www.optery.com/",
-        rating: "⭐⭐⭐",
-        recurring: true,
-        price: "$3.99 /mo",
-        summary: "Free scan available. Mix of manual and automated removals based on tier.",
-        quotes: [
-          "Removaly found 6 hits… Optery found zero.",
-          "They support both manual and automated options depending on tier."
-        ]
-      },
-      {
-        name: "Aura",
-        url: "https://www.aura.com/",
-        rating: "⭐⭐⭐",
-        recurring: false,
-        price: "$12 /mo",
-        summary: "Part of a broader security suite—strong UX and robust spam- and phishing-protection, plus a family-plan option, but it lacks automated recurring broker purges.",
-        quotes: [
-          "Strong user interface and threat protection.",
-          "Great family-plan access, but no automated recurring removals."
-        ]
-      },
-      {
-        name: "Dataseal.io",
-        url: "https://dataseal.io/",
-        rating: "⭐⭐⭐",
-        recurring: true,
-        price: "$12.99 /mo",
-        summary: "Intuitive dashboard, top-notch support, highly rated for ease of use.",
-        quotes: [
-          "Very thorough and informative! Super easy to navigate!",
-          "Their support actually replied to a removal follow-up I sent."
-        ]
+
+
+// ==============================
+// Cybersecurity Writer Site JS
+// ==============================
+
+// 1) Make comparison table rows clickable via data-href
+(function () {
+  var rows = document.querySelectorAll('table.compare-table tr[data-href]');
+  rows.forEach(function (row) {
+    // Accessibility roles
+    row.setAttribute('role', 'link');
+    row.setAttribute('tabindex', '0');
+
+    function open() {
+      var url = row.getAttribute('data-href');
+      if (url) window.open(url, '_blank', 'noopener');
+    }
+
+    row.addEventListener('click', open);
+    row.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
       }
-    ]
-  }
-});
+    });
+  });
+})();
+
+// 2) Smooth-scroll for on-page anchors
+(function () {
+  var anchorLinks = document.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var targetId = link.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      var el = document.querySelector(targetId);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Optionally update URL hash without jumping
+      history.pushState(null, '', targetId);
+    });
+  });
+})();
+
+// 3) External links: add rel attributes for safety (in case any were missed in HTML)
+(function () {
+  var links = document.querySelectorAll('a[target="_blank"]');
+  links.forEach(function (a) {
+    var rel = (a.getAttribute('rel') || '').split(/[\s,]+/);
+    if (rel.indexOf('noopener') === -1) rel.push('noopener');
+    if (rel.indexOf('noreferrer') === -1) rel.push('noreferrer');
+    a.setAttribute('rel', rel.join(' ').trim());
+  });
+})();
+
+// 4) Back-to-top convenience if a link with href="#top" exists
+(function () {
+  var topLink = document.querySelector('a[href="#top"]');
+  if (!topLink) return;
+  topLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.pushState(null, '', '#top');
+  });
+})();
